@@ -1,0 +1,25 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+    "children": [
+        {
+            "elmType": "span",
+            "style": {
+                "padding-right": "10px"
+            },
+            "txtContent": "Open Notebook"
+        },
+        {
+            "attributes": {
+                "class": "sp-field-quickActions",
+                "href": "=@currentField",
+                "iconName": "OneNoteLogo",
+                "target": "_blank"
+            },
+            "elmType": "a",
+            "style": {
+                "text-decoration": "none"
+            }
+        }
+    ],
+    "elmType": "div"
+}

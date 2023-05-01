@@ -1,0 +1,94 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "div",
+  "style": {
+    "flex-wrap": "wrap",
+    "display": "flex"
+  },
+  "children": [
+    {
+      "elmType": "div",
+      "style": {
+        "box-sizing": "border-box",
+        "padding": "4px 8px 5px 8px",
+        "overflow": "hidden",
+        "text-overflow": "ellipsis",
+        "display": "flex",
+        "border-radius": "16px",
+        "height": "24px",
+        "align-items": "center",
+        "white-space": "nowrap",
+        "margin": "4px 4px 4px 4px"
+      },
+      "attributes": {
+        "class": {
+          "operator": ":",
+          "operands": [
+            {
+              "operator": "==",
+              "operands": [
+                "@currentField",
+                "1 Funding and Proposal Development"
+              ]
+            },
+            "sp-css-backgroundColor-BgMintGreen sp-css-borderColor-MintGreenFont sp-field-fontSizeSmall sp-css-color-MintGreenFont",
+            {
+              "operator": ":",
+              "operands": [
+                {
+                  "operator": "==",
+                  "operands": [
+                    "@currentField",
+                    "2 Regulatory Review and Compliance"
+                  ]
+                },
+                "sp-css-backgroundColor-BgPeach sp-css-borderColor-PeachFont sp-field-fontSizeSmall sp-css-color-PeachFont",
+                {
+                  "operator": ":",
+                  "operands": [
+                    {
+                      "operator": "==",
+                      "operands": [
+                        "@currentField",
+                        "3 Study is Active"
+                      ]
+                    },
+                    "sp-css-backgroundColor-BgGold sp-css-borderColor-GoldFont sp-field-fontSizeSmall sp-css-color-GoldFont",
+                    {
+                      "operator": ":",
+                      "operands": [
+                        {
+                          "operator": "==",
+                          "operands": [
+                            "@currentField",
+                            ""
+                          ]
+                        },
+                        "",
+                        {
+                          "operator": ":",
+                          "operands": [
+                            {
+                              "operator": "==",
+                              "operands": [
+                                "@currentField",
+                                "4 Publication and Data Sharing"
+                              ]
+                            },
+                            "sp-css-backgroundColor-BgLightGray sp-css-borderColor-LightGrayFont sp-field-fontSizeSmall sp-css-color-LightGrayFont",
+                            "sp-field-borderAllRegular sp-field-borderAllSolid sp-css-borderColor-neutralSecondary"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "txtContent": "@currentField"
+    }
+  ]
+}

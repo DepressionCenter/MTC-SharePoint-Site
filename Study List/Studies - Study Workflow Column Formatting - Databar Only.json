@@ -1,0 +1,21 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "div",
+  "children": [
+    {
+      "elmType": "span",
+      "txtContent": "=[$StudyMilestone.lookupValue]",
+      "style": {
+        "padding-left": "8px",
+        "white-space": "nowrap"
+      }
+    }
+  ],
+  "attributes": {
+    "class": "sp-field-dataBars"
+  },
+  "style": {
+    "padding": "0",
+    "width": "=if(replace([$StudyMilestone_x003a__x0020_Rela0],'%','') >= 100, '100%', [$StudyMilestone_x003a__x0020_Rela0])"
+  }
+}

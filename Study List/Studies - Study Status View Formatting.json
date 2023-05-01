@@ -1,0 +1,830 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/row-formatting.schema.json",
+  "hideSelection": true,
+  "hideColumnHeader": true,
+  "hideListHeader": true,
+  "groupProps": {
+	"hideFooter": true,
+    "headerFormatter": {
+      "elmType": "div",
+      "style": {
+        "flex-direction": "row"
+      },
+      "children": [
+        {
+          "elmType": "div",
+          "attributes": {
+            "class": "=if(startsWith(@group.fieldData.lookupValue,'1'), 'sp-css-backgroundColor-BgMintGreen sp-css-borderColor-MintGreenFont', if(startsWith(@group.fieldData.lookupValue,'2'), 'sp-css-backgroundColor-BgPeach sp-css-borderColor-PeachFont', if(startsWith(@group.fieldData.lookupValue,'3'), 'sp-css-backgroundColor-BgGold sp-css-borderColor-GoldFont', if(startsWith(@group.fieldData.lookupValue,'1'), 'sp-css-backgroundColor-BgLightGray sp-css-borderColor-LightGrayFont', ''))) )"
+          },
+          "style": {
+            "display": "inline-flex",
+            "height": "25px",
+            "border-radius": "15px",
+            "padding-left": "8px",
+            "padding-top": "5px"
+          },
+          "children": [
+            {
+              "elmType": "span",
+              "attributes": {
+                "iconName": "=if(startsWith(@group.fieldData.lookupValue,'1'), 'NewAnalyticsQuery', if(startsWith(@group.fieldData.lookupValue,'2'), 'FormLibrary', if(startsWith(@group.fieldData.lookupValue,'3'), 'Running', if(startsWith(@group.fieldData.lookupValue,'1'), 'DiagnosticDataBarTooltip', ''))) )"
+              },
+              "style": {
+                "padding-right": "6px",
+                "padding-top": "2px"
+              }
+            },
+            {
+              "elmType": "div",
+              "style": {
+                "display": "inline-flex",
+                "padding-right": "9px"
+              },
+			  
+              "children": [
+                {
+                  "elmType": "div",
+                  "style": {
+                    "padding-left": "5px"
+                  },
+                  "attributes": {
+                    "class": "ms-fontWeight-bold"
+                  },
+                  "txtContent": "=@group.count"
+                },
+                {
+                  "elmType": "div",
+                  "style": {
+                    "padding-left": "5px"
+                  },
+                  "attributes": {
+                    "class": "ms-fontWeight-normal"
+                  },
+                  "txtContent": "= if(@group.count!= 1,' Studies in ',' Study in ')"
+                },
+                {
+                  "elmType": "div",
+                  "txtContent": "=substring(@group.fieldData.lookupValue , 4 , 128)",
+                  "attributes": {
+                    "title": "=@group.fieldData.lookupValue",
+                    "class": "ms-fontWeight-bold"
+                  },
+                  "style": {
+                    "padding-left": "5px"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  
+  "footerFormatter": {
+      "elmType": "div",
+	  "attributes": {
+		  "class": "ms-fontWeight-semibold ms-fontSize-18"
+	  },
+	  "style": {
+		  "color": "ms-color-gray20"
+	  },
+      "children": [
+        {
+          "elmType": "div",
+          "attributes": {
+            "iconName": "UnstackSelected"
+          },
+          "style": {
+            "margin-top": "10px"
+          }
+        },
+        {
+          "elmType": "div",
+          "style": {
+            "margin-top": "10px"
+          },
+          "txtContent": "=' Total: ' + @columnAggregate.value"
+        }
+      ]
+    },
+	
+
+  
+  
+  "rowFormatter": {
+    "elmType": "div",
+    "style": {
+      "display": "flex",
+      "flex-wrap": "wrap",
+      "align-items": "stretch",
+      "padding": "8px",
+      "margin-bottom": "16px",
+      "max-width": "930px",
+      "border-radius": "8px",
+      "box-shadow": "4px 4px 8px darkgrey"
+    },
+    "attributes": {
+      "class": "ms-bgColor-neutralLighter"
+    },
+    "children": [
+      {
+        "elmType": "div",
+        "style": {
+          "flex-grow": "1",
+          "display": "flex",
+          "flex-wrap": "wrap",
+          "align-items": "stretch",
+          "max-width": "310px"
+        },
+        "children": [
+          {
+            "elmType": "div",
+            "style": {
+              "flex": "none"
+            },
+            "children": [
+              {
+                "elmType": "div",
+                "style": {
+                  "width": "100px",
+                  "height": "100px",
+                  "overflow": "hidden",
+                  "border-radius": "50%",
+                  "margin-right": "8px"
+                },
+				"defaultHoverField": "[$PI]",
+                "children": [
+                  {
+                    "elmType": "img",
+                    "attributes": {
+                      "src": "=if([$PI_x003a_Email]=='', @currentWeb + '/_layouts/15/userphoto.aspx?size=L', if(getUserImage([$Editor.email], 'l')=='', @currentWeb + '/_layouts/15/userphoto.aspx?size=L&accountName=' + [$PI_x003a_UniqueName]+'@med.umich.edu', getUserImage([$Editor.email], 'l')))",
+                      "title": "=if([$PI_x003a_Email]=='', 'Set the Teams account for this contact (' + [$PI_x003a_UniqueName] + ')', [$PI_x003a_UniqueName])"
+                    },
+                    "style": {
+                      "position": "relative",
+                      "top": "50%",
+                      "left": "50%",
+                      "width": "100%",
+                      "height": "auto",
+                      "margin-left": "-50%",
+                      "margin-top": "-50%"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "elmType": "div",
+            "style": {
+              "flex-grow": "1",
+              "display": "flex",
+              "flex-direction": "column",
+              "flex-wrap": "nowrap",
+              "align-items": "stretch",
+              "max-width": "200px"
+            },
+            "children": [
+              {
+                "elmType": "div",
+                "style": {
+                  "flex-grow": "1"
+                },
+                "children": [
+                  {
+                    "elmType": "span",
+                    "txtContent": "=[$Title]",
+					"customRowAction": {
+						"action": "defaultClick"
+					},
+                    "style": {
+						"border": "none",
+						"background-color": "inherit",
+						"display": "block",
+						"cursor": "pointer",
+						"padding-bottom": "4px"
+                    },
+                    "attributes": {
+                      "class": "=if(indexOf([$Title]+'~','~')<24, 'ms-fontSize-20', if(indexOf([$Title]+'~','~')>48, 'ms-fontSize-16', 'ms-fontSize-18')) + ' ms-fontWeight-semibold ms-fontColor-neutralPrimary'",
+					  "title": "Open study card"
+                    }
+                  },
+                  {
+                    "elmType": "a",
+                    "txtContent": "='P.I.: ' + [$PI.lookupValue]",
+                    "style": {
+                      "display": "=if([$PI.lookupValue] == '', 'none', 'block')",
+					  "cursor": "pointer",
+					  "text-decoration": "none"
+                    },
+                    "attributes": {
+                      "class": "ms-fontSize-m ms-fontWeight-semibold ms-fontColor-neutralSecondary ms-fontColor-themeSecondary--hover",
+					  "href": "=@currentWeb + '/Lists/Contacts/DispForm.aspx?ID=' + [$PI_x003a_ID]",
+					  "target":"_top"
+                    }
+                  },
+				  
+				  {
+                    "elmType": "span",
+                    "txtContent": "[$PI_x003a_Job_x0020_Title]",
+                    "style": {
+                      "display": "=if([$PI_x003a_Job_x0020_Title] == '', 'none', 'block')",
+					  "cursor": "pointer"
+                    },
+                    "attributes": {
+                      "class": "ms-fontSize-m ms-fontWeight-regular ms-fontColor-neutralSecondary"
+                    }
+                  }
+                ]
+              },
+              {
+                "elmType": "div",
+                "style": {
+                  "flex-grow": "1",
+                  "display": "flex",
+                  "flex-direction": "row",
+                  "flex-wrap": "wrap",
+                  "align-items": "flex-end"
+                },
+                "children": [
+                  {
+                    "elmType": "a",
+                    "style": {
+                      "display": "=if([$PI_x003a_Email] == '', 'none', 'block')",
+                      "width": "100%"
+                    },
+                    "attributes": {
+                      "class": "ms-fontSize-xs ms-fontWeight-regular ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover",
+                      "href": "='mailto:' + [$PI_x003a_Email]"
+                    },
+                    "children": [
+                      {
+                        "elmType": "span",
+                        "attributes": {
+                          "iconName": "Mail",
+                          "class": "ms-fontColor-themePrimary"
+                        },
+                        "style": {
+                          "padding-right": "6px"
+                        }
+                      },
+                      {
+                        "elmType": "span",
+                        "txtContent": "[$PI_x003a_Email]"
+                      }
+                    ]
+                  },
+                  {
+                    "elmType": "span",
+                    "style": {
+                      "display": "=if([$PhoneNumber] == '', 'none', 'block')",
+                      "width": "100%"
+                    },
+                    "attributes": {
+                      "class": "ms-fontSize-xs ms-fontWeight-regular ms-fontColor-neutralPrimary"
+                    },
+                    "children": [
+                      {
+                        "elmType": "span",
+                        "attributes": {
+                          "iconName": "Phone",
+                          "class": "ms-fontColor-themePrimary"
+                        },
+                        "style": {
+                          "padding-right": "6px"
+                        }
+                      },
+                      {
+                        "elmType": "span",
+                        "txtContent": "[$PhoneNumber]"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "elmType": "div",
+        "style": {
+          "flex-grow": "1",
+          "display": "flex",
+          "flex-direction": "column",
+          "flex-wrap": "nowrap",
+          "align-items": "stretch",
+          "max-width": "310px",
+          "min-width": "205px",
+          "margin-top": "4px"
+        },
+        "children": [
+          {
+            "elmType": "div",
+            "style": {
+              "flex-grow": "1",
+              "text-align": "center"
+            },
+            "children": [
+              {
+                    "elmType": "span",
+                    "txtContent": "Study Team",					
+                    "style": {
+                      "display": "block"
+                    },
+                    "attributes": {
+                      "class": "ms-fontSize-mPlus ms-fontWeight-semibold ms-fontColor-neutralSecondary",
+					  "title":"Study team members, including co-investigators, research coordinators, and data analysts."
+                    }
+                  }
+            ]
+          },
+		  
+		  {
+			  "elmType": "div",
+               "style": {
+				  "flex-grow": "1",
+				  "text-align": "center"
+				},
+                "children": [
+					{
+						"elmType": "span",
+						"forEach": "teamMemberName in [$OtherStudyTeamMembers]",
+						"txtContent": {
+						   "operator": "?",
+						   "operands": [
+							  "=loopIndex('teamMemberName') == 0",
+							  "[$teamMemberName.lookupValue]",
+							  {
+								 "operator": "?",
+								 "operands": [
+									"=loopIndex('teamMemberName') + 1 == length(@currentField)",
+									"=', and ' + [$teamMemberName.lookupValue]",
+									"=', ' + [$teamMemberName.lookupValue]"
+								 ]
+							  }
+						   ]
+						}
+					}
+				]
+            },
+		  
+		  {
+            "elmType": "div",
+            "style": {
+              "flex-grow": "1",
+              "text-align": "center"
+            },
+            "children": [
+              {
+                    "elmType": "span",
+                    "txtContent": "Platforms & Devices",					
+                    "style": {
+                      "display": "block"
+                    },
+                    "attributes": {
+                      "class": "ms-fontSize-mPlus ms-fontWeight-semibold ms-fontColor-neutralSecondary",
+					  "title":"Study team members, including co-investigators, research coordinators, and data analysts."
+                    }
+                  }
+            ]
+          },
+          {
+            "elmType": "div",
+            "style": {
+              "flex-grow": "1",
+              "text-align": "center"
+            },
+            "children": [
+              {
+                "elmType": "span",
+				"txtContent": "=if(indexOf([$AffinityGroups],'DIGIT-MI')>=0, '🗹 DIGIT-MI Member', '☐ TBD')",
+				"inlineEditField": "[$AffinityGroups]",
+                "style": {
+                  "display": "block",
+				  "cursor": "pointer"
+                },
+                "attributes": {
+					"class": "=if(indexOf([$AffinityGroups],'DIGIT-MI')>=0, 'ms-fontSize-sPlus ms-fontWeight-regular ms-fontColor-neutralSecondary', 'ms-fontSize-s ms-fontWeight-semilight ms-fontColor-neutralTertiary')"
+                }
+              },
+			  {
+                "elmType": "span",
+				"txtContent": "=if(indexOf([$AffinityGroups],'MDEN')>=0, '🗹 MDEN Member', '☐ TBD')",
+				"inlineEditField": "[$AffinityGroups]",
+                "style": {
+                  "display": "block",
+				  "cursor": "pointer"
+                },
+                "attributes": {
+					"class": "=if(indexOf([$AffinityGroups],'MDEN')>=0, 'ms-fontSize-sPlus ms-fontWeight-regular ms-fontColor-neutralSecondary', 'ms-fontSize-s ms-fontWeight-semilight ms-fontColor-neutralTertiary')"
+                }
+              }
+            ]
+          }
+        ]
+      },
+	  
+	  
+      {
+        "elmType": "div",
+        "style": {
+          "flex-grow": "1",
+          "display": "flex",
+          "flex-direction": "column",
+          "max-width": "310px",
+          "min-width": "155px"
+        },
+        "children": [
+		
+          {
+            "elmType": "div",
+            "style": {
+              "flex-grow": "1"
+            },
+            "children": [
+				{
+					"elmType": "div",
+					"style": {
+						"border-radius": "2px",
+						"display": "=if([$StudyStartDate], 'flex', 'none')",
+						"padding": "0 4.5px",
+						"float": "right"
+					},
+					"attributes": {
+						"class": "=if(([$StudyStartDate] >= @now - (86400000*2)) && ([$StudyStartDate] <= @now + (86400000*10)), 'ms-bgColor-red ms-fontColor-white', '')",
+						"title": "Study start date"
+					},
+					"inlineEditField": "[$StudyStartDate]",
+					"children": [
+						{
+							"attributes": {
+								"iconName": "Calendar"
+							},
+							"elmType": "span",
+							"style": {
+								"margin-right": "4px"
+							}
+						},
+						{
+							"elmType": "div",
+							"txtContent": "=replace(toLocaleDateString([$StudyStartDate]),'/' + toString(getYear(@now)),'')",
+							"class": "ms-fontSize-20"
+						}
+					]
+				},
+              {
+                "elmType": "span",
+                "style": {
+                  "display": "block"
+                },
+                "attributes": {
+                  "class": "ms-fontWeight-semibold ms-fontSize-m"
+                },
+                "txtContent": "Notes:"
+              },
+              {
+                "elmType": "span",
+                "style": {
+                  "display": "block",
+                  "padding-left": "8px"
+                },
+                "txtContent": "=if([$Notes]=='', 'No notes entered', substring([$Notes], 0, 200) + '...')",
+				"inlineEditField": "[$Notes]",
+                "attributes": {
+                  "class": "ms-fontSize-s ms-fontWeight-semilight ms-fontColor-neutralTertiary"
+                }
+              }
+            ]
+          },
+          {
+            "elmType": "div",
+            "style": {
+              "flex": "none",
+              "display": "flex",
+              "flex-direction": "row-reverse",
+              "flex-wrap": "nowrap"
+            },
+            "children": [
+              {
+                "elmType": "a",
+                "attributes": {
+					"href": "=if([$StudyNotebook]=='',@currentWeb + '/_layouts/15/Doc.aspx?sourcedoc={6c3d6460-28e6-4649-b7a7-2e0db0466fa7}',[$StudyNotebook])",
+					"target": "_blank",
+					"title": "Open Notebook (OneNote)"
+                },
+				"class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover",
+				"style":{
+					"text-decoration": "none",
+					"border": "none",
+					"background-color": "transparent",
+					"cursor": "pointer"
+				},
+				"children": [
+					{
+						"elmType": "button",
+						"attributes": {
+							"title": "Open Notebook (OneNote)",
+							"class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover"
+						},
+						"style":{
+							"border": "none",
+							"background-color": "transparent",
+							"cursor": "pointer"
+						},
+						"children": [
+							{
+								"elmType": "span",
+								"attributes": {
+									"iconName": "OneNoteLogo"
+								}
+							}
+						]
+					}
+				]
+              },
+			  
+			  {
+                "elmType": "a",
+                "attributes": {
+					"href": "=@currentWeb + '/Lists/Studies/StudyStatus.aspx?view=7&q=' + [$PI.lookupValue] ",
+					"target": "_top",
+					"title": "Find studies by same P.I."
+                },
+				"class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover",
+				"style":{
+					"text-decoration": "none",
+					"border": "none",
+					"background-color": "transparent",
+					"cursor": "pointer"
+				},
+				"children": [
+					{
+						"elmType": "button",
+						"attributes": {
+							"title": "Find studies by same P.I.",
+							"class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover"
+						},
+						"style":{
+							"border": "none",
+							"background-color": "transparent",
+							"cursor": "pointer"
+						},
+						"children": [
+							{
+								"elmType": "span",
+								"attributes": {
+									"iconName": "TimeLineProgress"
+								}
+							}
+						]
+					}
+				]
+              },
+
+              {
+                "elmType": "button",
+                "customRowAction": {
+                  "action": "defaultClick"
+                },
+                "attributes": {
+                  "title": "=if([$_CommentCount],if([$_CommentCount] > 99, ' 99+', ' '+[$_CommentCount]) + ' comment(s)','Add comments')",
+                  "class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover"
+                },
+                "style": {
+                  "border": "none",
+                  "background-color": "transparent",
+                  "cursor": "pointer"
+                },
+                "children": [
+                  {
+                    "elmType": "span",
+                    "attributes": {
+                      "iconName": "=if([$_CommentCount],'CommentActive','Comment')"
+                    }
+                  },
+				  {
+                    "elmType": "span",
+                    "txtContent": "=if([$_CommentCount],if([$_CommentCount] > 99, ' 99+', ' '+[$_CommentCount]),'')",
+					"class": "ms-fontSize-xs ms-font-xs ms-fontWeight-light",
+					"attributes": {
+						"style": {
+							"vertical-align": "super",
+							"font-size": "4px"
+						}
+					}
+                  }
+                ]
+              },
+              {
+                "elmType": "button",
+                "customRowAction": {
+                  "action": "defaultClick"
+                },
+                "attributes": {
+                  "title": "Open study card",
+                  "class": "ms-fontColor-neutralPrimary ms-fontColor-themePrimary--hover"
+                },
+                "style": {
+                  "border": "none",
+                  "background-color": "transparent",
+                  "cursor": "pointer"
+                },
+                "children": [
+                  {
+                    "elmType": "span",
+                    "attributes": {
+                      "iconName": "Edit"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+	  
+	  
+	  
+	  
+	  
+	              {
+                "children": [
+                    {
+                        "children": [
+                            {
+								"elmType": "span",
+                                "attributes": {
+                                    "class": "ms-motion-fadeIn ms-motion-duration-4 ms-fontColor-sharedRedOrange10",
+                                    "iconName": "=if([$SupportStatus]=='On Hold', 'CirclePauseSolid', if([$SupportStatus]=='No Longer Supporting', 'Blocked2Solid', 'POISolid'))",
+									"title": "=[$StudyMilestone.lookupValue] + '  |  ' + [$SupportStatus]"
+                                },
+                                "customCardProps": {
+                                    "directionalHint": "bottomCenter",
+                                    "formatter": {
+                                        
+										
+										"elmType": "div",
+										"attributes": {
+											"class":"ms-scaleUpIn100 sp-css-backgroundColor-themeLighterAlt sp-field-borderAllDotted"
+										},
+										"style": {
+											"padding": "8px",
+											"z-inde": "1"
+										},
+										"children": [
+											{
+											  "elmType": "img",
+											  "attributes": {
+												"src": "[$StudyMilestone_x003a__x0020_Mile0]",
+												"title": "=if([$StudyMilestone_x003a__x0020_Mile0] == '', 'No picture available', [$StudyMilestone.lookupValue])"
+											  },
+											  "style": {
+												"position": "relative",
+												"top": "50%",
+												"left": "50%",
+												"width": "680px",
+												"height": "auto",
+												"margin-left": "-50%",
+												"margin-top": "0%"
+											  }
+											}
+										]
+										
+										
+                                    },
+                                    "isBeakVisible": true,
+                                    "openOnEvent": "hover"
+                                }
+                            }
+                        ],
+                        "elmType": "span",
+                        "style": {
+                            "font-size": "x-large",
+                            "margin-left": "=[$StudyMilestone_x003a__x0020_Rela0]",
+                            "width": "100%"
+                        }
+                    }
+                ],
+                "elmType": "div",
+                "style": {
+                    "display": "flex",
+                    "margin-left": "-15px",
+                    "width": "100%",
+					"margin-bottom": "-28px"
+                }
+            },
+            {
+                "children": [
+                    {
+                        "attributes": {
+                            "class": "sp-css-backgroundColor-MintGreenFont"
+                        },
+                        "elmType": "div",
+                        "style": {
+                            "border-bottom-left-radius": "15px",
+                            "border-top-left-radius": "15px",
+                            "flex": "1"
+                        }
+                    },
+                    {
+                        "attributes": {
+                            "class": "sp-css-backgroundColor-PeachFont"
+                        },
+                        "elmType": "div",
+                        "style": {
+                            "flex": "1"
+                        }
+                    },
+                    {
+                        "attributes": {
+                            "class": "sp-css-backgroundColor-GoldFont"
+                        },
+                        "elmType": "div",
+                        "style": {
+                            "flex": "1"
+                        }
+                    },
+                    {
+                        "attributes": {
+                            "class": "sp-css-backgroundColor-LightGrayFont"
+                        },
+                        "elmType": "div",
+                        "style": {
+                            "border-bottom-right-radius": "15px",
+                            "border-top-right-radius": "15px",
+                            "flex": "1"
+                        }
+                    }
+                ],
+                "elmType": "div",
+                "style": {
+                    "display": "flex",
+                    "height": "15px",
+                    "width": "100%"
+                }
+            },
+            {
+                "children": [
+                    {
+                        "attributes": {
+                            "class": "sp-field-fontSize17 sp-css-backgroundColor-BgMintGreen sp-css-color-MintGreenFont"
+                        },
+                        "elmType": "span",
+                        "style": {
+                            "flex": "1",
+                            "text-align": "center"
+                        },
+                        "txtContent": "Funding and Proposal Development"
+                    },
+                    {
+                        "attributes": {
+                            "class": "sp-field-fontSize17 sp-css-backgroundColor-BgPeach sp-css-color-PeachFont"
+                        },
+                        "elmType": "span",
+                        "style": {
+                            "flex": "1",
+                            "text-align": "center"
+                        },
+                        "txtContent": "Regulatory Review and Compliance"
+                    },
+                    {
+                        "attributes": {
+                            "class": "sp-field-fontSize17 sp-css-backgroundColor-BgGold sp-css-color-GoldFont"
+                        },
+                        "elmType": "span",
+                        "style": {
+                            "flex": "1",
+                            "text-align": "center"
+                        },
+                        "txtContent": "Study is Active"
+                    },
+                    {
+                        "attributes": {
+                            "class": "sp-field-fontSize17 sp-css-backgroundColor-BgLightGray sp-css-color-LightGrayFont"
+                        },
+                        "elmType": "span",
+                        "style": {
+                            "flex": "1",
+                            "text-align": "center"
+                        },
+                        "txtContent": "Publication and Data Sharing"
+                    }
+                ],
+                "elmType": "div",
+                "style": {
+                    "display": "flex",
+                    "width": "100%"
+                }
+            }
+			
+			
+			
+	  
+	  
+	  
+	  
+    ]
+  }
+}

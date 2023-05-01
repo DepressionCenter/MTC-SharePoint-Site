@@ -1,0 +1,55 @@
+{
+  "$schema": "http://columnformatting.sharepointpnp.com/columnFormattingSchema.json",
+  "elmType": "div",
+  "children": [
+    {
+      "elmType": "img",
+      "attributes": {
+        "src": "@currentField",
+        "title": "=if(@currentField == '', 'No picture available', @currentField)"
+      },
+      "style": {
+        "position": "relative",
+        "top": "50%",
+        "left": "50%",
+        "width": "160px",
+        "height": "auto",
+        "margin-left": "-50%",
+        "margin-top": "0%"
+      },
+	  
+	  
+	  "customCardProps": {
+	"formatter": {
+		"elmType": "div",
+		"children": [
+			{
+			  "elmType": "img",
+			  "attributes": {
+				"src": "@currentField",
+				"title": "=if(@currentField == '', 'No picture available', @currentField)"
+			  },
+			  "style": {
+				"position": "relative",
+				"top": "50%",
+				"left": "50%",
+				"width": "840px",
+				"height": "auto",
+				"margin-left": "-50%",
+				"margin-top": "0%"
+			  }
+			}
+		]
+	},
+	"openOnEvent": "hover",
+	"directionalHint": "bottomCenter",
+	"isBeakVisible": true,
+	"beakStyle" : {
+		"backgroundColor": "white"
+	}
+  }
+  
+  
+ }
+]
+}

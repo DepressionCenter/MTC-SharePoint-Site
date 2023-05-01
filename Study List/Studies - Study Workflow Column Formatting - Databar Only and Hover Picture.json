@@ -1,0 +1,55 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "div",
+  "children": [
+    {
+      "elmType": "span",
+      "txtContent": "=[$StudyMilestone.lookupValue]",
+      "style": {
+        "padding-left": "8px",
+        "white-space": "nowrap"
+      },
+	  
+	  
+	  "customCardProps": {
+		"formatter": {
+			"elmType": "div",
+			"children": [
+				{
+				  "elmType": "img",
+				  "attributes": {
+					"src": "[$StudyMilestone_x003a__x0020_Mile0]",
+					"title": "=if([$StudyMilestone_x003a__x0020_Mile0] == '', 'No picture available', [$StudyMilestone.lookupValue])"
+				  },
+				  "style": {
+					"position": "relative",
+					"top": "50%",
+					"left": "50%",
+					"width": "840px",
+					"height": "auto",
+					"margin-left": "-50%",
+					"margin-top": "0%"
+				  }
+				}
+			]
+		},
+		"openOnEvent": "hover",
+		"directionalHint": "bottomCenter",
+		"isBeakVisible": true,
+		"beakStyle" : {
+			"backgroundColor": "white"
+		}
+	  }
+  
+  
+  
+    }
+  ],
+  "attributes": {
+    "class": "sp-field-dataBars"
+  },
+  "style": {
+    "padding": "0",
+    "width": "=if(replace([$StudyMilestone_x003a__x0020_Rela0],'%','') >= 100, '100%', [$StudyMilestone_x003a__x0020_Rela0])"
+  }
+}

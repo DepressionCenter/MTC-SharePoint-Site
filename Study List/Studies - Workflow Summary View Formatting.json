@@ -1,0 +1,112 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/row-formatting.schema.json",
+  "hideSelection": true,
+  "hideColumnHeader": true,
+  "hideListHeader": true,
+  "groupProps": {
+	"hideFooter": true,
+    "headerFormatter": {
+      "elmType": "div",
+      "style": {
+        "flex-direction": "row"
+      },
+      "children": [
+        {
+          "elmType": "div",
+          "attributes": {
+            "class": "=if(startsWith(@group.fieldData.lookupValue,'1'), 'sp-css-backgroundColor-BgMintGreen sp-css-borderColor-MintGreenFont', if(startsWith(@group.fieldData.lookupValue,'2'), 'sp-css-backgroundColor-BgPeach sp-css-borderColor-PeachFont', if(startsWith(@group.fieldData.lookupValue,'3'), 'sp-css-backgroundColor-BgGold sp-css-borderColor-GoldFont', if(startsWith(@group.fieldData.lookupValue,'1'), 'sp-css-backgroundColor-BgLightGray sp-css-borderColor-LightGrayFont', ''))) )"
+          },
+          "style": {
+            "display": "inline-flex",
+            "height": "25px",
+            "border-radius": "15px",
+            "padding-left": "8px",
+            "padding-top": "5px"
+          },
+          "children": [
+            {
+              "elmType": "span",
+              "attributes": {
+                "iconName": "=if(startsWith(@group.fieldData.lookupValue,'1'), 'NewAnalyticsQuery', if(startsWith(@group.fieldData.lookupValue,'2'), 'FormLibrary', if(startsWith(@group.fieldData.lookupValue,'3'), 'Running', if(startsWith(@group.fieldData.lookupValue,'1'), 'DiagnosticDataBarTooltip', ''))) )"
+              },
+              "style": {
+                "padding-right": "6px",
+                "padding-top": "2px"
+              }
+            },
+            {
+              "elmType": "div",
+              "style": {
+                "display": "inline-flex",
+                "padding-right": "9px"
+              },
+			  
+              "children": [
+                {
+                  "elmType": "div",
+                  "style": {
+                    "padding-left": "5px"
+                  },
+                  "attributes": {
+                    "class": "ms-fontWeight-bold"
+                  },
+                  "txtContent": "=@group.count"
+                },
+                {
+                  "elmType": "div",
+                  "style": {
+                    "padding-left": "5px"
+                  },
+                  "attributes": {
+                    "class": "ms-fontWeight-normal"
+                  },
+                  "txtContent": "= if(@group.count!= 1,' Studies in ',' Study in ')"
+                },
+                {
+                  "elmType": "div",
+                  "txtContent": "=substring(@group.fieldData.lookupValue , 4 , 128)",
+                  "attributes": {
+                    "title": "=@group.fieldData.lookupValue",
+                    "class": "ms-fontWeight-bold"
+                  },
+                  "style": {
+                    "padding-left": "5px"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  
+  "footerFormatter": {
+      "elmType": "div",
+	  "attributes": {
+		  "class": "ms-fontWeight-semibold ms-fontSize-18"
+	  },
+	  "style": {
+		  "color": "ms-color-gray20"
+	  },
+      "children": [
+        {
+          "elmType": "div",
+          "attributes": {
+            "iconName": "UnstackSelected"
+          },
+          "style": {
+            "margin-top": "10px"
+          }
+        },
+        {
+          "elmType": "div",
+          "style": {
+            "margin-top": "10px"
+          },
+          "txtContent": "=' Total: ' + @columnAggregate.value"
+        }
+      ]
+    }
+	
+}

@@ -1,0 +1,360 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "div",
+  "children": [
+    {
+      "elmType": "span",
+      "txtContent": "=replace(@currentField.displayValue,'%','')/100",
+      "style": {
+        "position": "absolute",
+        "white-space": "nowrap",
+        "padding": "0 4px"
+      },
+      "attributes": {
+        "class": {
+          "operator": "?",
+          "operands": [
+            {
+              "operator": "&&",
+              "operands": [
+                {
+                  "operator": "<",
+                  "operands": [
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "operator": "<",
+                  "operands": [
+                    "=replace(@currentField.displayValue,'%','')/100",
+                    0
+                  ]
+                }
+              ]
+            },
+            "sp-css-color-CoralFont",
+            "sp-css-color-CornflowerBlueFont"
+          ]
+        }
+      }
+    },
+    {
+      "elmType": "div",
+      "attributes": {
+        "class": {
+          "operator": "?",
+          "operands": [
+            {
+              "operator": "&&",
+              "operands": [
+                {
+                  "operator": "<",
+                  "operands": [
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "operator": ">",
+                  "operands": [
+                    0.95,
+                    0
+                  ]
+                },
+                {
+                  "operator": ">=",
+                  "operands": [
+                    "=replace(@currentField.displayValue,'%','')/100",
+                    0
+                  ]
+                }
+              ]
+            },
+            "sp-field-dashedBorderRight",
+            ""
+          ]
+        }
+      },
+      "style": {
+        "min-height": "inherit",
+        "box-sizing": "border-box",
+        "padding-left": {
+          "operator": "?",
+          "operands": [
+            {
+              "operator": ">",
+              "operands": [
+                0,
+                0
+              ]
+            },
+            {
+              "operator": "+",
+              "operands": [
+                {
+                  "operator": "*",
+                  "operands": [
+                    {
+                      "operator": "/",
+                      "operands": [
+                        {
+                          "operator": "-",
+                          "operands": [
+                            {
+                              "operator": "abs",
+                              "operands": [
+                                0
+                              ]
+                            },
+                            {
+                              "operator": "?",
+                              "operands": [
+                                {
+                                  "operator": "<",
+                                  "operands": [
+                                    "=replace(@currentField.displayValue,'%','')/100",
+                                    0
+                                  ]
+                                },
+                                {
+                                  "operator": "abs",
+                                  "operands": [
+                                    {
+                                      "operator": "?",
+                                      "operands": [
+                                        {
+                                          "operator": "<=",
+                                          "operands": [
+                                            "=replace(@currentField.displayValue,'%','')/100",
+                                            0
+                                          ]
+                                        },
+                                        0,
+                                        "=replace(@currentField.displayValue,'%','')/100"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                0
+                              ]
+                            }
+                          ]
+                        },
+                        0.95
+                      ]
+                    },
+                    100
+                  ]
+                },
+                "%"
+              ]
+            },
+            0
+          ]
+        }
+      }
+    },
+    {
+      "elmType": "div",
+      "attributes": {
+        "class": {
+          "operator": "?",
+          "operands": [
+            {
+              "operator": "&&",
+              "operands": [
+                {
+                  "operator": "<",
+                  "operands": [
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "operator": "<",
+                  "operands": [
+                    "=replace(@currentField.displayValue,'%','')/100",
+                    0
+                  ]
+                }
+              ]
+            },
+            "sp-css-backgroundColor-BgCoral sp-css-borderTop-CoralFont",
+            "sp-css-backgroundColor-BgCornflowerBlue sp-css-borderTop-CornflowerBlueFont"
+          ]
+        }
+      },
+      "style": {
+        "min-height": "inherit",
+        "box-sizing": "border-box",
+        "width": {
+          "operator": "?",
+          "operands": [
+            {
+              "operator": ">",
+              "operands": [
+                0,
+                0
+              ]
+            },
+            {
+              "operator": "+",
+              "operands": [
+                {
+                  "operator": "*",
+                  "operands": [
+                    {
+                      "operator": "/",
+                      "operands": [
+                        {
+                          "operator": "?",
+                          "operands": [
+                            {
+                              "operator": "<=",
+                              "operands": [
+                                "=replace(@currentField.displayValue,'%','')/100",
+                                0
+                              ]
+                            },
+                            {
+                              "operator": "abs",
+                              "operands": [
+                                0
+                              ]
+                            },
+                            {
+                              "operator": "?",
+                              "operands": [
+                                {
+                                  "operator": ">=",
+                                  "operands": [
+                                    "=replace(@currentField.displayValue,'%','')/100",
+                                    0.95
+                                  ]
+                                },
+                                0.95,
+                                {
+                                  "operator": "abs",
+                                  "operands": [
+                                    "=replace(@currentField.displayValue,'%','')/100"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        0.95
+                      ]
+                    },
+                    100
+                  ]
+                },
+                "%"
+              ]
+            },
+            {
+              "operator": "?",
+              "operands": [
+                {
+                  "operator": ">=",
+                  "operands": [
+                    "=replace(@currentField.displayValue,'%','')/100",
+                    0.95
+                  ]
+                },
+                "100%",
+                {
+                  "operator": "?",
+                  "operands": [
+                    {
+                      "operator": "<=",
+                      "operands": [
+                        "=replace(@currentField.displayValue,'%','')/100",
+                        0
+                      ]
+                    },
+                    "0%",
+                    {
+                      "operator": "+",
+                      "operands": [
+                        {
+                          "operator": "*",
+                          "operands": [
+                            {
+                              "operator": "/",
+                              "operands": [
+                                {
+                                  "operator": "-",
+                                  "operands": [
+                                    {
+                                      "operator": "||",
+                                      "operands": [
+                                        "=replace(@currentField.displayValue,'%','')/100",
+                                        0
+                                      ]
+                                    },
+                                    0
+                                  ]
+                                },
+                                0.95
+                              ]
+                            },
+                            100
+                          ]
+                        },
+                        "%"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elmType": "div",
+      "style": {
+        "min-height": "inherit",
+        "box-sizing": "border-box"
+      },
+      "attributes": {
+        "class": {
+          "operator": "?",
+          "operands": [
+            {
+              "operator": "&&",
+              "operands": [
+                {
+                  "operator": "<",
+                  "operands": [
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "operator": ">",
+                  "operands": [
+                    0.95,
+                    0
+                  ]
+                },
+                {
+                  "operator": "<",
+                  "operands": [
+                    "=replace(@currentField.displayValue,'%','')/100",
+                    0
+                  ]
+                }
+              ]
+            },
+            "sp-field-dashedBorderRight",
+            ""
+          ]
+        }
+      }
+    }
+  ]
+}
