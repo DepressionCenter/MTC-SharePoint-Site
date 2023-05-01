@@ -6,3 +6,6 @@ Note that although this code is made public, it is derivative work from examples
 https://learn.microsoft.com/en-us/sharepoint/dev/declarative-customization/formatting-advanced
 
 https://pnp.github.io/List-Formatting/
+
+----
+© 2023 The Regents of the University of Michigan
