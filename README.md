@@ -29,18 +29,17 @@ The Mobile Technologies Core provides investigators across the University of Mic
 ## Contact
 To get in touch, contact the individual developers in the check-in history.
 
-If you need assistance identifying the correct contact person, email the EFDC's Mobile Technologies Core team at: efdc-mobiletech@umich.edu.
+If you need assistance identifying a contact person, email the EFDC's Mobile Technologies Core team at: efdc-mobiletech@umich.edu.
 
 
 
 ## Credits
-### Contributors:
+#### Contributors:
 + Eisenberg Family Depression Center [(@DepressionCenter)](https://github.com/DepressionCenter/)
 + Gabriel Mongefranco [(@gabrielmongefranco)](https://github.com/gabrielmongefranco)
 
 
-
-### This work is based on the following projects, libraries and/or studies:
+#### This work is based in part on the following projects, libraries and/or studies:
 https://learn.microsoft.com/en-us/sharepoint/dev/declarative-customization/formatting-advanced
 
 https://pnp.github.io/List-Formatting/
