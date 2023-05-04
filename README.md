@@ -13,9 +13,6 @@ https://pnp.github.io/List-Formatting/
 
 
 ## About Mobile Technologies Core
-Mobile technology has the potential to facilitate high-impact advances in our understanding of the connection between mental and physical health.  
-
-Combining objective data from mobile and wearable technologies with traditional research tools and health and behavioral data allows long-term research to be done at scale, reach diverse populations and reduce the burden of research participation. 
 
 The Mobile Technologies Core provides investigators across the University of Michigan the support and guidance needed to utilize mobile technologies and digital mental health measures in their studies. Experienced faculty and staff offer hands-on consultative services to researchers throughout the University – regardless of specialty or research focus.
 
