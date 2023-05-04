@@ -16,6 +16,9 @@ https://pnp.github.io/List-Formatting/
 
 The Mobile Technologies Core provides investigators across the University of Michigan the support and guidance needed to utilize mobile technologies and digital mental health measures in their studies. Experienced faculty and staff offer hands-on consultative services to researchers throughout the University – regardless of specialty or research focus.
 
+## License
+
+See LICENSE for terms of use and license.
 
 ----
 © 2023 The Regents of the University of Michigan
