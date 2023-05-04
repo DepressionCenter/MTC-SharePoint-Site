@@ -1,3 +1,5 @@
+![EFDC Logo](https://github.com/DepressionCenter/.github/blob/main/images/EFDCLogo_375w.png "EFDC")
+
 # MTC-SharePoint-Site
 
 ## Description
